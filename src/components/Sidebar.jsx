@@ -12,13 +12,13 @@ export default function Sidebar() {
     <aside className="w-64 bg-gray-100 h-screen p-6 flex flex-col">
       <div className="mb-6 text-2xl font-bold text-center">Logo</div>
       <nav className="flex-1 space-y-2">
-        <NavLink to="/" end className={linkClasses}>
+        <NavLink to="/annotation" end className={linkClasses}>
           Dashboard
         </NavLink>
-        <NavLink to="/history" className={linkClasses}>
+        <NavLink to="/annotation/history" className={linkClasses}>
           History
         </NavLink>
-        <NavLink to="/profile" className={linkClasses}>
+        <NavLink to="/annotation/profile" className={linkClasses}>
           Profile
         </NavLink>
         <button
