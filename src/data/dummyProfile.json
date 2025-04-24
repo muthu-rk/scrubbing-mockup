@@ -1,0 +1,12 @@
+{
+    "userId": 7,
+    "name": "Ravi Sharma",
+    "email": "ravi.sharma@example.com",
+    "role": "annotator",
+    "avatarUrl": "https://i.pravatar.cc/150?img=7",
+    "joinedAt": "2024-11-02T08:00:00+05:30",
+    "preferences": {
+      "notifications": true,
+      "itemsPerPage": 10
+    }
+  }
