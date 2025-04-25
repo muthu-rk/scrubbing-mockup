@@ -8,9 +8,13 @@ export default function Annotation() {
   const { id } = useParams();
   const nav = useNavigate();
   const match = matches.find(m => m.id === +id) || {};
+
+  // video & canvas dimensions
   const fps = 6;
   const nativeW = 560;
   const nativeH = 280;
+
+  // refs
   const canvasRef = useRef();
   const tracksListRef = useRef();
   const ganttRef = useRef();
@@ -68,6 +72,16 @@ export default function Annotation() {
     });
     return stats;
   }, [data]);
+
+  // ── Auto-seek to selected track’s first frame ────────────────────────────────
+  useEffect(() => {
+    if (!selectedTrack) return;
+    const stats = trackStats[selectedTrack];
+    if (stats) {
+      setFrameIndex(stats.startFrame);
+      setPlaying(false);
+    }
+  }, [selectedTrack, trackStats]);
 
   const allIds = useMemo(() => Object.keys(trackStats), [trackStats]);
   const filtered = useMemo(
